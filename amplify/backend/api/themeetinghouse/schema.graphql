@@ -1137,3 +1137,55 @@ type WebPageContent
   list:WebPageList
   showLocationSearch:Boolean
 }
+
+
+
+
+
+
+
+
+
+
+
+
+type TMHUser
+  @model
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "owner" }
+      { allow: groups, groups: ["admin"] } 
+    ]
+  ) {
+  
+  id: ID!
+  given_name: String!
+  family_name: String!
+  email: String @auth(rules: [{ allow: owner, ownerField: "owner" },{allow:groups,groups:["admin"],operations:[read]}])
+  phone: String @auth(rules: [{ allow: owner, ownerField: "owner" }])
+  owner: String
+
+  stripeCustomerID:String @auth(rules: [{ allow: owner, ownerField: "owner" ,operations:[read]},{allow:groups,groups:["admin"]}])
+  stripeSubscriptionID:String @auth(rules: [{ allow: owner, ownerField: "owner" ,operations:[read]},{allow:groups,groups:["admin"]}])
+
+  billingAddress: Address @auth(rules: [{ allow: owner, ownerField: "owner" }])
+
+  profileImage: Image
+  joined: String
+ 
+}
+type Image {
+  userId: String
+  filenameSmall: String
+  filenameMedium: String
+  filenameLarge: String
+  filenameUpload: String
+}
+type Address{
+  city:String
+    country:String
+    line1:String
+    line2:String
+    postal_code:String
+    state:String
+}

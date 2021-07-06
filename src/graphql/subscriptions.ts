@@ -23627,3 +23627,99 @@ export const onDeleteComment = /* GraphQL */ `
     }
   }
 `;
+export const onCreateTmhUser = /* GraphQL */ `
+  subscription OnCreateTmhUser($owner: String) {
+    onCreateTMHUser(owner: $owner) {
+      id
+      given_name
+      family_name
+      owner
+      profileImage {
+        userId
+        filenameSmall
+        filenameMedium
+        filenameLarge
+        filenameUpload
+      }
+      joined
+      createdAt
+      updatedAt
+      email
+      phone
+      stripeCustomerID
+      stripeSubscriptionID
+      billingAddress {
+        city
+        country
+        line1
+        line2
+        postal_code
+        state
+      }
+    }
+  }
+`;
+export const onUpdateTmhUser = /* GraphQL */ `
+  subscription OnUpdateTmhUser($owner: String) {
+    onUpdateTMHUser(owner: $owner) {
+      id
+      given_name
+      family_name
+      owner
+      profileImage {
+        userId
+        filenameSmall
+        filenameMedium
+        filenameLarge
+        filenameUpload
+      }
+      joined
+      createdAt
+      updatedAt
+      email
+      phone
+      stripeCustomerID
+      stripeSubscriptionID
+      billingAddress {
+        city
+        country
+        line1
+        line2
+        postal_code
+        state
+      }
+    }
+  }
+`;
+export const onDeleteTmhUser = /* GraphQL */ `
+  subscription OnDeleteTmhUser($owner: String) {
+    onDeleteTMHUser(owner: $owner) {
+      id
+      given_name
+      family_name
+      owner
+      profileImage {
+        userId
+        filenameSmall
+        filenameMedium
+        filenameLarge
+        filenameUpload
+      }
+      joined
+      createdAt
+      updatedAt
+      email
+      phone
+      stripeCustomerID
+      stripeSubscriptionID
+      billingAddress {
+        city
+        country
+        line1
+        line2
+        postal_code
+        state
+      }
+    }
+  }
+`;

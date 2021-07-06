@@ -1648,6 +1648,91 @@ export type DeleteCommentInput = {
   id?: string | null,
 };
 
+export type CreateTMHUserInput = {
+  id?: string | null,
+  given_name: string,
+  family_name: string,
+  email?: string | null,
+  phone?: string | null,
+  owner?: string | null,
+  stripeCustomerID?: string | null,
+  stripeSubscriptionID?: string | null,
+  billingAddress?: AddressInput | null,
+  profileImage?: ImageInput | null,
+  joined?: string | null,
+};
+
+export type AddressInput = {
+  city?: string | null,
+  country?: string | null,
+  line1?: string | null,
+  line2?: string | null,
+  postal_code?: string | null,
+  state?: string | null,
+};
+
+export type ImageInput = {
+  userId?: string | null,
+  filenameSmall?: string | null,
+  filenameMedium?: string | null,
+  filenameLarge?: string | null,
+  filenameUpload?: string | null,
+};
+
+export type TMHUser = {
+  __typename: "TMHUser",
+  id?: string,
+  given_name?: string,
+  family_name?: string,
+  owner?: string | null,
+  profileImage?: Image,
+  joined?: string | null,
+  createdAt?: string,
+  updatedAt?: string,
+  email?: string | null,
+  phone?: string | null,
+  stripeCustomerID?: string | null,
+  stripeSubscriptionID?: string | null,
+  billingAddress?: Address,
+};
+
+export type Image = {
+  __typename: "Image",
+  userId?: string | null,
+  filenameSmall?: string | null,
+  filenameMedium?: string | null,
+  filenameLarge?: string | null,
+  filenameUpload?: string | null,
+};
+
+export type Address = {
+  __typename: "Address",
+  city?: string | null,
+  country?: string | null,
+  line1?: string | null,
+  line2?: string | null,
+  postal_code?: string | null,
+  state?: string | null,
+};
+
+export type UpdateTMHUserInput = {
+  id: string,
+  given_name?: string | null,
+  family_name?: string | null,
+  email?: string | null,
+  phone?: string | null,
+  owner?: string | null,
+  stripeCustomerID?: string | null,
+  stripeSubscriptionID?: string | null,
+  billingAddress?: AddressInput | null,
+  profileImage?: ImageInput | null,
+  joined?: string | null,
+};
+
+export type DeleteTMHUserInput = {
+  id?: string | null,
+};
+
 export type BibleResponse = {
   __typename: "BibleResponse",
   data?: BibleData,
@@ -3024,6 +3109,27 @@ export type SearchableCommentConnection = {
   items?:  Array<Comment | null > | null,
   nextToken?: string | null,
   total?: number | null,
+};
+
+export type ModelTMHUserFilterInput = {
+  id?: ModelIDFilterInput | null,
+  given_name?: ModelStringFilterInput | null,
+  family_name?: ModelStringFilterInput | null,
+  email?: ModelStringFilterInput | null,
+  phone?: ModelStringFilterInput | null,
+  owner?: ModelStringFilterInput | null,
+  stripeCustomerID?: ModelStringFilterInput | null,
+  stripeSubscriptionID?: ModelStringFilterInput | null,
+  joined?: ModelStringFilterInput | null,
+  and?: Array< ModelTMHUserFilterInput | null > | null,
+  or?: Array< ModelTMHUserFilterInput | null > | null,
+  not?: ModelTMHUserFilterInput | null,
+};
+
+export type ModelTMHUserConnection = {
+  __typename: "ModelTMHUserConnection",
+  items?:  Array<TMHUser | null > | null,
+  nextToken?: string | null,
 };
 
 export type CreateTnSeriesMutationVariables = {
@@ -29174,6 +29280,120 @@ export type DeleteCommentMutation = {
   } | null,
 };
 
+export type CreateTmhUserMutationVariables = {
+  input?: CreateTMHUserInput,
+};
+
+export type CreateTmhUserMutation = {
+  createTMHUser?:  {
+    __typename: "TMHUser",
+    id: string,
+    given_name: string,
+    family_name: string,
+    owner?: string | null,
+    profileImage?:  {
+      __typename: "Image",
+      userId?: string | null,
+      filenameSmall?: string | null,
+      filenameMedium?: string | null,
+      filenameLarge?: string | null,
+      filenameUpload?: string | null,
+    } | null,
+    joined?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    email?: string | null,
+    phone?: string | null,
+    stripeCustomerID?: string | null,
+    stripeSubscriptionID?: string | null,
+    billingAddress?:  {
+      __typename: "Address",
+      city?: string | null,
+      country?: string | null,
+      line1?: string | null,
+      line2?: string | null,
+      postal_code?: string | null,
+      state?: string | null,
+    } | null,
+  } | null,
+};
+
+export type UpdateTmhUserMutationVariables = {
+  input?: UpdateTMHUserInput,
+};
+
+export type UpdateTmhUserMutation = {
+  updateTMHUser?:  {
+    __typename: "TMHUser",
+    id: string,
+    given_name: string,
+    family_name: string,
+    owner?: string | null,
+    profileImage?:  {
+      __typename: "Image",
+      userId?: string | null,
+      filenameSmall?: string | null,
+      filenameMedium?: string | null,
+      filenameLarge?: string | null,
+      filenameUpload?: string | null,
+    } | null,
+    joined?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    email?: string | null,
+    phone?: string | null,
+    stripeCustomerID?: string | null,
+    stripeSubscriptionID?: string | null,
+    billingAddress?:  {
+      __typename: "Address",
+      city?: string | null,
+      country?: string | null,
+      line1?: string | null,
+      line2?: string | null,
+      postal_code?: string | null,
+      state?: string | null,
+    } | null,
+  } | null,
+};
+
+export type DeleteTmhUserMutationVariables = {
+  input?: DeleteTMHUserInput,
+};
+
+export type DeleteTmhUserMutation = {
+  deleteTMHUser?:  {
+    __typename: "TMHUser",
+    id: string,
+    given_name: string,
+    family_name: string,
+    owner?: string | null,
+    profileImage?:  {
+      __typename: "Image",
+      userId?: string | null,
+      filenameSmall?: string | null,
+      filenameMedium?: string | null,
+      filenameLarge?: string | null,
+      filenameUpload?: string | null,
+    } | null,
+    joined?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    email?: string | null,
+    phone?: string | null,
+    stripeCustomerID?: string | null,
+    stripeSubscriptionID?: string | null,
+    billingAddress?:  {
+      __typename: "Address",
+      city?: string | null,
+      country?: string | null,
+      line1?: string | null,
+      line2?: string | null,
+      postal_code?: string | null,
+      state?: string | null,
+    } | null,
+  } | null,
+};
+
 export type GetBiblePassageQueryVariables = {
   bibleId?: string | null,
   passage?: string | null,
@@ -49624,6 +49844,88 @@ export type SearchCommentsQuery = {
     } | null > | null,
     nextToken?: string | null,
     total?: number | null,
+  } | null,
+};
+
+export type GetTmhUserQueryVariables = {
+  id?: string,
+};
+
+export type GetTmhUserQuery = {
+  getTMHUser?:  {
+    __typename: "TMHUser",
+    id: string,
+    given_name: string,
+    family_name: string,
+    owner?: string | null,
+    profileImage?:  {
+      __typename: "Image",
+      userId?: string | null,
+      filenameSmall?: string | null,
+      filenameMedium?: string | null,
+      filenameLarge?: string | null,
+      filenameUpload?: string | null,
+    } | null,
+    joined?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    email?: string | null,
+    phone?: string | null,
+    stripeCustomerID?: string | null,
+    stripeSubscriptionID?: string | null,
+    billingAddress?:  {
+      __typename: "Address",
+      city?: string | null,
+      country?: string | null,
+      line1?: string | null,
+      line2?: string | null,
+      postal_code?: string | null,
+      state?: string | null,
+    } | null,
+  } | null,
+};
+
+export type ListTmhUsersQueryVariables = {
+  filter?: ModelTMHUserFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+};
+
+export type ListTmhUsersQuery = {
+  listTMHUsers?:  {
+    __typename: "ModelTMHUserConnection",
+    items?:  Array< {
+      __typename: "TMHUser",
+      id: string,
+      given_name: string,
+      family_name: string,
+      owner?: string | null,
+      profileImage?:  {
+        __typename: "Image",
+        userId?: string | null,
+        filenameSmall?: string | null,
+        filenameMedium?: string | null,
+        filenameLarge?: string | null,
+        filenameUpload?: string | null,
+      } | null,
+      joined?: string | null,
+      createdAt: string,
+      updatedAt: string,
+      email?: string | null,
+      phone?: string | null,
+      stripeCustomerID?: string | null,
+      stripeSubscriptionID?: string | null,
+      billingAddress?:  {
+        __typename: "Address",
+        city?: string | null,
+        country?: string | null,
+        line1?: string | null,
+        line2?: string | null,
+        postal_code?: string | null,
+        state?: string | null,
+      } | null,
+    } | null > | null,
+    nextToken?: string | null,
   } | null,
 };
 
@@ -75556,5 +75858,119 @@ export type OnDeleteCommentSubscription = {
     owner: string,
     createdAt: string,
     updatedAt: string,
+  } | null,
+};
+
+export type OnCreateTmhUserSubscriptionVariables = {
+  owner?: string | null,
+};
+
+export type OnCreateTmhUserSubscription = {
+  onCreateTMHUser?:  {
+    __typename: "TMHUser",
+    id: string,
+    given_name: string,
+    family_name: string,
+    owner?: string | null,
+    profileImage?:  {
+      __typename: "Image",
+      userId?: string | null,
+      filenameSmall?: string | null,
+      filenameMedium?: string | null,
+      filenameLarge?: string | null,
+      filenameUpload?: string | null,
+    } | null,
+    joined?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    email?: string | null,
+    phone?: string | null,
+    stripeCustomerID?: string | null,
+    stripeSubscriptionID?: string | null,
+    billingAddress?:  {
+      __typename: "Address",
+      city?: string | null,
+      country?: string | null,
+      line1?: string | null,
+      line2?: string | null,
+      postal_code?: string | null,
+      state?: string | null,
+    } | null,
+  } | null,
+};
+
+export type OnUpdateTmhUserSubscriptionVariables = {
+  owner?: string | null,
+};
+
+export type OnUpdateTmhUserSubscription = {
+  onUpdateTMHUser?:  {
+    __typename: "TMHUser",
+    id: string,
+    given_name: string,
+    family_name: string,
+    owner?: string | null,
+    profileImage?:  {
+      __typename: "Image",
+      userId?: string | null,
+      filenameSmall?: string | null,
+      filenameMedium?: string | null,
+      filenameLarge?: string | null,
+      filenameUpload?: string | null,
+    } | null,
+    joined?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    email?: string | null,
+    phone?: string | null,
+    stripeCustomerID?: string | null,
+    stripeSubscriptionID?: string | null,
+    billingAddress?:  {
+      __typename: "Address",
+      city?: string | null,
+      country?: string | null,
+      line1?: string | null,
+      line2?: string | null,
+      postal_code?: string | null,
+      state?: string | null,
+    } | null,
+  } | null,
+};
+
+export type OnDeleteTmhUserSubscriptionVariables = {
+  owner?: string | null,
+};
+
+export type OnDeleteTmhUserSubscription = {
+  onDeleteTMHUser?:  {
+    __typename: "TMHUser",
+    id: string,
+    given_name: string,
+    family_name: string,
+    owner?: string | null,
+    profileImage?:  {
+      __typename: "Image",
+      userId?: string | null,
+      filenameSmall?: string | null,
+      filenameMedium?: string | null,
+      filenameLarge?: string | null,
+      filenameUpload?: string | null,
+    } | null,
+    joined?: string | null,
+    createdAt: string,
+    updatedAt: string,
+    email?: string | null,
+    phone?: string | null,
+    stripeCustomerID?: string | null,
+    stripeSubscriptionID?: string | null,
+    billingAddress?:  {
+      __typename: "Address",
+      city?: string | null,
+      country?: string | null,
+      line1?: string | null,
+      line2?: string | null,
+      postal_code?: string | null,
+      state?: string | null,
+    } | null,
   } | null,
 };
