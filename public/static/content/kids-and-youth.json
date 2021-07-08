@@ -85,7 +85,7 @@
             "text": "We are passionate about helping with spiritual parenting. Click here to see what your kids learned last Sunday and access helpful resources.",
             "imageSrc": "/static/images/kidsyouth-2-3.jpg",
             "imageAlt": "Two parents walking with their young child.",
-            "navigateTo": "http://www.http://parents.themeetinghouse.com",
+            "navigateTo": "http://parents.themeetinghouse.com",
             "openNewBrowser": true
           },
           {
@@ -93,7 +93,7 @@
             "text": "Our mission is to develop lifelong followers of Jesus. Our approach is to teach stories within the context of the overarching Biblical narrative, so that kids and youth can learn each story and how it connects to God’s big story. Click here to preview.",
             "imageSrc": "/static/images/kidsyouth-4.jpg",
             "imageAlt": "Two parents and their daughter sitting together outside",
-            "navigateTo": "http://www.http://kidsandyouth.themeetinghouse.com/",
+            "navigateTo": "http://kidsandyouth.themeetinghouse.com",
             "openNewBrowser": true
           }
         ]
