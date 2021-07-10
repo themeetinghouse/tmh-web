@@ -33,7 +33,7 @@ def assert_list_image(img: dict):
     assert(isinstance(img['imageSrc'], str))
     image_exists(img['imageSrc'])
     assert(isinstance(img['imageAlt'], str))
-    assert(img['imageAlt'])
+    #assert(img['imageAlt'])
 
 def assert_content_link_or_button(link_or_button, check_new_tab = False):
     assert(isinstance(link_or_button['navigateTo'], str))

@@ -148,7 +148,7 @@ class HeroItem extends React.Component<Props, State> {
               <div className="emailWrapper">
                 <img
                   className="contactIcon"
-                  alt="Contac Icon"
+                  alt="Contact Icon"
                   src="/static/svg/Contact.svg"
                 ></img>
                 <input

@@ -265,7 +265,7 @@ class HomeMenu extends React.Component<Props, State> {
             <NavbarBrand tag={Link} className="brand" to="/">
               <img
                 src={'/static/logos/house-' + this.state.logoColor + '-sm.png'}
-                alt="Logo: Stylized House"
+                alt="The Meeting House"
                 className={
                   !this.state.showLiveBanner
                     ? 'logoHouse '
@@ -277,7 +277,7 @@ class HomeMenu extends React.Component<Props, State> {
                   src={
                     '/static/logos/tmh-text-' + this.state.logoColor + '-sm.png'
                   }
-                  alt="Logo: The Meeting House"
+                  alt=""
                   className={
                     !this.state.showLiveBanner
                       ? 'logoText '
