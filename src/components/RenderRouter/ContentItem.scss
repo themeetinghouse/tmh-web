@@ -9,6 +9,88 @@
 }
 
 @media (min-width: 768px) {
+  .madPosition {
+    position: relative;
+    left: 20vw;
+    width: 80vw;
+    height: 46vw;
+    z-index: 100;
+  }
+
+  .madH1 {
+    font-weight: bold;
+    font-size: 3vw;
+    font-family: Graphik Web;
+    color: theme.$onyxblacktext;
+    margin-bottom: 2vw;
+  }
+
+  .madText {
+    font-size: 1.2vw;
+    font-family: Graphik Web;
+    margin-bottom: 1vw;
+    color: theme.$coolgray11;
+  }
+
+  .madList {
+    font-size: 5vw;
+    font-family: Graphik Web;
+    line-height: 0vw;
+  }
+
+  .madcontainer {
+    position: relative;
+    width: 28vw;
+    height: 30vw;
+    left: 4vw;
+    top: 8vw;
+  }
+
+  .madrec {
+    position: absolute;
+    right: 15vw;
+    width: 8vw;
+    bottom: 3.75vw;
+    top: 0vw;
+    border: solid 16px theme.$onyxblacktext;
+  }
+
+  .madImage {
+    position: absolute;
+    height: 35vw;
+    width: 35vw;
+    left: 40vw;
+    object-fit: cover;
+    top: 3.5vw;
+  }
+
+  .madA {
+    font-size: 1.2vw;
+  }
+
+  .madAContainer {
+    text-align: left;
+    top: -3vw;
+    left: 3vw;
+    width: 28vw;
+    border: none;
+    margin: -3.3vw;
+  }
+
+  .madAContainer:hover {
+    .madarrow {
+      transition: 1s;
+      transform: translate(20px);
+    }
+  }
+
+  .madarrow {
+    float: right;
+    padding-top: 0px;
+    width: 24px;
+    transition: 1s;
+  }
+
   .pie {
     position: relative;
     text-align: center;
@@ -565,6 +647,81 @@
 }
 
 @media (max-width: 767px) {
+  .madPosition {
+    position: relative;
+    left: 5vw;
+    width: 80vw;
+    height: 180vw;
+    z-index: 100;
+  }
+
+  .madH1 {
+    font-weight: bold;
+    font-size: 6vw;
+    font-family: Graphik Web;
+    color: theme.$onyxblacktext;
+    margin-bottom: 6vw;
+  }
+
+  .madText {
+    font-size: 3.5vw;
+    font-family: Graphik Web;
+    margin-bottom: 1vw;
+    color: theme.$coolgray11;
+  }
+
+  .madList {
+    font-size: 5vw;
+    font-family: Graphik Web;
+    line-height: 0vw;
+
+    cursor: pointer;
+    &:hover {
+      .madarrow {
+        float: right;
+      }
+    }
+  }
+
+  .madcontainer {
+    position: relative;
+    width: 80vw;
+    height: 30vw;
+    left: 0vw;
+    top: 60vw;
+  }
+
+  .madrec {
+    position: absolute;
+    left: 25vw;
+    width: 73vw;
+    height: 24vw;
+    top: 25vw;
+    border: solid 28px theme.$onyxblacktext;
+    border-right: 0vw;
+  }
+
+  .madImage {
+    display: none;
+  }
+
+  .madA {
+    font-size: 1.2vw;
+  }
+
+  .madAContainer {
+    text-align: left;
+    top: 6vw;
+    left: 0vw;
+    width: 80vw;
+    border: none;
+  }
+
+  .madarrow {
+    float: right;
+    width: 24px;
+  }
+
   .one-image-calendar {
     margin-top: 24px;
   }

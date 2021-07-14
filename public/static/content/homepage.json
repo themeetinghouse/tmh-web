@@ -150,23 +150,22 @@
       },
       {
         "type": "content",
-        "style": "oneImage",
+        "style": "mad",
         "header1": "Make a Difference",
-        "header2": "",
         "text1": "Volunteering, giving, and compassion around the block or around the world. We want to use our money, time, and resources to love and serve people on the margins. Are you looking to get involved?",
         "list": [
           {
-            "type": "link",
+            "type": "arrow",
             "title": "Volunteer",
             "navigateTo": "/volunteering"
           },
           {
-            "type": "link",
+            "type": "arrow",
             "title": "Compassion",
             "navigateTo": "/compassion"
           },
           {
-            "type": "link",
+            "type": "arrow",
             "title": "Give",
             "navigateTo": "/give"
           }
